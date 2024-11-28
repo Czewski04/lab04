@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ResponseDto {
+public class ResponseDatabaseRowDto {
     @JsonProperty("page-number")
     private int pageNumber;
 
