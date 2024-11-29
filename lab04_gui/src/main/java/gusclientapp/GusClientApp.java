@@ -18,7 +18,7 @@ public class GusClientApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/mainView.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/welcomeView.fxml")));
         primaryStage.setTitle("GUI Client");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
