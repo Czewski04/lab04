@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="785.0" prefWidth="1454.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WelcomeViewController">
+<AnchorPane prefHeight="785.0" prefWidth="1454.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.startview.WelcomeViewController">
    <Button fx:id="startButton" layoutX="526.0" layoutY="419.0" mnemonicParsing="false" onAction="#switchToMenuView" prefHeight="110.0" prefWidth="402.0" style="-fx-background-color: grey;" text="Kliknij aby rozpocząć" textAlignment="CENTER">
       <font>
          <Font name="Tahoma Bold" size="33.0" />

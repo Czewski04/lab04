@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="785.0" prefWidth="1454.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.regionsview.LibraryRegionsChartController">
+   <children>
+      <BarChart fx:id="libraryChart" layoutX="55.0" layoutY="72.0" prefHeight="641.0" prefWidth="1343.0" style="-fx-background-color: white;" title="Księgozbiór">
+         <xAxis>
+            <CategoryAxis label="Województwa" prefHeight="142.0" prefWidth="1265.0" side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis label="Ilość sztuk" side="LEFT" />
+         </yAxis>
+      </BarChart>
+      <Button layoutX="55.0" layoutY="732.0" mnemonicParsing="false" onAction="#oddYear" style="-fx-background-color: grey;" text="Poprzedni rok">
+         <font>
+            <Font name="Tahoma Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="1301.0" layoutY="732.0" mnemonicParsing="false" onAction="#addYear" style="-fx-background-color: grey;" text="Następny rok">
+         <font>
+            <Font name="Tahoma Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="668.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToCountryChart" prefHeight="40.0" prefWidth="118.0" style="-fx-background-color: grey;" text="Polska">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="55.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="40.0" prefWidth="118.0" style="-fx-background-color: grey;" text="Menu">
+         <font>
+            <Font name="Tahoma Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="yearLabel" layoutX="709.0" layoutY="730.0" text="Rok" textFill="WHITE">
+         <font>
+            <Font name="Tahoma" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

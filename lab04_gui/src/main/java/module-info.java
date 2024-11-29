@@ -9,4 +9,10 @@ module lab04.gui {
     opens controller to javafx.fxml;
     exports guiservice;
     opens guiservice to javafx.fxml;
+    exports controller.regionsview;
+    opens controller.regionsview to javafx.fxml;
+    exports controller.countryview;
+    opens controller.countryview to javafx.fxml;
+    exports controller.startview;
+    opens controller.startview to javafx.fxml;
 }

@@ -1,33 +1,34 @@
-package controller;
+package controller.countryview;
 
-import app.Application;
+import app.ApiClientApp;
+import controller.ControllerInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.DatabaseRow;
-import guiservice.ServiceAbstractClass;
+import guiservice.AbstractService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class BookLoanChartController extends ServiceAbstractClass implements Initializable {
+public class ReadersCountryChartController extends AbstractService implements Initializable, ControllerInterface {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     @FXML
-    public BarChart<String, Double> bookLoanChart;
+    public BarChart<String, Double> readersChart;
+    @FXML
+    public Label yearLabel;
 
     private int year=2023;
 
@@ -38,10 +39,11 @@ public class BookLoanChartController extends ServiceAbstractClass implements Ini
 
     public void refreshChart(int year){
         try {
-            bookLoanChart.getData().clear();
+            readersChart.getData().clear();
+            yearLabel.setText(String.valueOf(year));
             ArrayList<XYChart.Series<String, Double>> seriesList = new ArrayList<>(prepareChartSeries(year));
             for(XYChart.Series<String, Double> series : seriesList) {
-                bookLoanChart.getData().add(series);
+                readersChart.getData().add(series);
             }
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
@@ -60,19 +62,18 @@ public class BookLoanChartController extends ServiceAbstractClass implements Ini
     }
 
     public ArrayList<XYChart.Series<String, Double>> prepareChartSeries(int year) throws IOException, InterruptedException {
-        Application app = new Application();
-        ArrayList<DatabaseRow> databaseRows = new ArrayList<>(app.getDatabaseRowsListBookLoanData(year));
+        ApiClientApp app = new ApiClientApp();
+        ArrayList<DatabaseRow> databaseRows = new ArrayList<>(app.getDatabaseRowsListReadersData(year));
 
-        return prepareChartSeries(databaseRows);
+        return prepareCountryChartSeries(databaseRows);
     }
 
-    public void switchToCountryChart(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/bookLoanChartView.fxml")));
-        root = fxmlLoader.load();
+    public void switchToRegionsChart(ActionEvent actionEvent) throws IOException {
+        String fxmlPath = "/chartview/regions/readersRegionsChartView.fxml";
+        switchChart(actionEvent, root, stage, scene, fxmlPath);
+    }
 
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void switchToMenu(ActionEvent actionEvent) throws IOException {
+        switchToMenu(actionEvent, root, stage, scene);
     }
 }

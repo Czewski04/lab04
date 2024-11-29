@@ -10,14 +10,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class MenuViewController {
-
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-
-    public void switchToLibraryChartView(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/libraryChart.fxml")));
+public interface ControllerInterface {
+    default void switchToMenu(ActionEvent actionEvent, Parent root, Stage stage, Scene scene) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/startview/menuView.fxml")));
         root = fxmlLoader.load();
 
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -26,8 +21,8 @@ public class MenuViewController {
         stage.show();
     }
 
-    public void switchToBookLoanChartView(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/bookLoanChartView.fxml")));
+    default void switchChart(ActionEvent actionEvent, Parent root, Stage stage, Scene scene, String fxmlPath) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource(fxmlPath)));
         root = fxmlLoader.load();
 
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -35,4 +30,6 @@ public class MenuViewController {
         stage.setScene(scene);
         stage.show();
     }
+
+
 }

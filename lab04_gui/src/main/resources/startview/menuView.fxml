@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="785.0" prefWidth="1454.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuViewController">
+<AnchorPane prefHeight="785.0" prefWidth="1454.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.startview.MenuViewController">
    <children>
       <Label layoutX="658.0" layoutY="22.0" text="Menu" textFill="WHITE">
          <font>
@@ -40,7 +40,7 @@
             </Lighting>
          </effect>
       </Button>
-      <Button layoutX="444.0" layoutY="477.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="275.0" style="-fx-background-color: grey;" text="Miejsca dla czytelników" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="444.0" layoutY="477.0" mnemonicParsing="false" onAction="#switchToPlacesForReadersChartView" prefHeight="122.0" prefWidth="275.0" style="-fx-background-color: grey;" text="Miejsca dla czytelników" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Tahoma Bold" size="30.0" />
          </font>
@@ -55,7 +55,7 @@
             </Lighting>
          </effect>
       </Button>
-      <Button layoutX="734.0" layoutY="340.0" mnemonicParsing="false" prefHeight="121.0" prefWidth="275.0" style="-fx-background-color: grey;" text="Czytelnicy bibliotek" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="734.0" layoutY="340.0" mnemonicParsing="false" onAction="#switchToReadersChartView" prefHeight="121.0" prefWidth="275.0" style="-fx-background-color: grey;" text="Czytelnicy bibliotek" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Tahoma Bold" size="30.0" />
          </font>
