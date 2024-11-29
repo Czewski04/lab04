@@ -8,8 +8,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="785.0" prefWidth="1454.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.startview.WelcomeViewController">
-   <Button fx:id="startButton" layoutX="526.0" layoutY="419.0" mnemonicParsing="false" onAction="#switchToMenuView" prefHeight="110.0" prefWidth="402.0" style="-fx-background-color: grey;" text="Kliknij aby rozpocząć" textAlignment="CENTER">
+<AnchorPane prefHeight="785.0" prefWidth="1400.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.startview.WelcomeViewController">
+   <Button layoutX="500.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchToMenuView" prefHeight="110.0" prefWidth="402.0" style="-fx-background-color: grey;" text="Kliknij aby rozpocząć" textAlignment="CENTER">
       <font>
          <Font name="Tahoma Bold" size="33.0" />
       </font>
@@ -24,12 +24,12 @@
          </Lighting>
       </effect>
    </Button>
-   <Label layoutX="643.0" layoutY="33.0" prefHeight="102.0" prefWidth="168.0" text=" Witaj" textFill="WHITE">
+   <Label layoutX="617.0" layoutY="34.0" prefHeight="102.0" prefWidth="168.0" text=" Witaj" textFill="WHITE">
       <font>
          <Font name="Tahoma" size="57.0" />
       </font>
    </Label>
-   <Label layoutX="119.0" layoutY="135.0" prefHeight="102.0" prefWidth="1215.0" text="Oto klient API Głównego Urzędu Statystycznego" textFill="WHITE">
+   <Label layoutX="93.0" layoutY="136.0" prefHeight="102.0" prefWidth="1215.0" text="Oto klient API Głównego Urzędu Statystycznego" textFill="WHITE">
       <font>
          <Font name="Tahoma" size="57.0" />
       </font>

@@ -18,13 +18,8 @@ public class MenuViewController implements ControllerInterface {
     private Parent root;
 
     public void switchToLibraryChartView(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/chartview/regions/libraryRegionsChartView.fxml")));
-        root = fxmlLoader.load();
-
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        String fxmlPath = "/chartview/regions/libraryRegionsChartView.fxml";
+        switchChart(actionEvent, root, stage, scene, fxmlPath);
     }
 
     public void switchToBookLoanChartView(ActionEvent actionEvent) throws IOException {

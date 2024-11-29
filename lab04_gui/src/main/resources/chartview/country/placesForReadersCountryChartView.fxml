@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="785.0" prefWidth="1454.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.countryview.PlacesForReadersCountryChartController">
+<AnchorPane prefHeight="785.0" prefWidth="1400.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.countryview.PlacesForReadersCountryChartController">
    <children>
-      <BarChart fx:id="placesForReadersChart" barGap="40.0" categoryGap="60.0" layoutX="479.0" layoutY="69.0" prefHeight="633.0" prefWidth="497.0" style="-fx-background-color: white;" title="Miejsca dla czytelników">
+      <BarChart fx:id="placesForReadersChart" barGap="40.0" categoryGap="60.0" layoutX="453.0" layoutY="76.0" prefHeight="633.0" prefWidth="497.0" style="-fx-background-color: white;" title="Miejsca dla czytelników">
          <xAxis>
             <CategoryAxis prefHeight="95.0" prefWidth="419.0" side="BOTTOM" />
          </xAxis>
@@ -18,27 +18,27 @@
             <NumberAxis label="Liczba miejsc" side="LEFT" />
          </yAxis>
       </BarChart>
-      <Button layoutX="55.0" layoutY="732.0" mnemonicParsing="false" onAction="#oddYear" style="-fx-background-color: grey;" text="Poprzedni rok">
+      <Button layoutX="29.0" layoutY="739.0" mnemonicParsing="false" onAction="#oddYear" style="-fx-background-color: grey;" text="Poprzedni rok">
          <font>
             <Font name="Tahoma Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="1301.0" layoutY="732.0" mnemonicParsing="false" onAction="#addYear" style="-fx-background-color: grey;" text="Następny rok">
+      <Button layoutX="1275.0" layoutY="739.0" mnemonicParsing="false" onAction="#addYear" style="-fx-background-color: grey;" text="Następny rok">
          <font>
             <Font name="Tahoma Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="657.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToRegionsChart" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: grey;" text="Województwa">
+      <Button layoutX="631.0" layoutY="21.0" mnemonicParsing="false" onAction="#switchToRegionsChart" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: grey;" text="Województwa">
          <font>
             <Font name="Tahoma Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="55.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="40.0" prefWidth="118.0" style="-fx-background-color: grey;" text="Menu">
+      <Button layoutX="29.0" layoutY="21.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="40.0" prefWidth="118.0" style="-fx-background-color: grey;" text="Menu">
          <font>
             <Font name="Tahoma Bold" size="13.0" />
          </font>
       </Button>
-      <Label fx:id="yearLabel" layoutX="720.0" layoutY="730.0" text="Rok" textFill="WHITE">
+      <Label fx:id="yearLabel" layoutX="694.0" layoutY="737.0" text="Rok" textFill="WHITE">
          <font>
             <Font name="Tahoma" size="22.0" />
          </font>
