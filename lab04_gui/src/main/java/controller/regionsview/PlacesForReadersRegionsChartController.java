@@ -44,8 +44,8 @@ public class PlacesForReadersRegionsChartController extends AbstractService impl
             for(XYChart.Series<String, Double> series : seriesList) {
                 placesForReadersChart.getData().add(series);
             }
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (IOException | InterruptedException | NullPointerException e) {
+            showErrorDialog("Błąd", "Brak dostępu do danych.");
         }
     }
 

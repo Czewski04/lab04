@@ -10,7 +10,7 @@ public class DatabaseRow {
     String namePosition1;
     String namePosition2;
     String namePosition3;
-    //String period;
+
     float value;
 
     public DatabaseRow(int rowNumber, String nameVar, String nameSection, String nameDimension1, String nameDimension2, String nameDimension3,

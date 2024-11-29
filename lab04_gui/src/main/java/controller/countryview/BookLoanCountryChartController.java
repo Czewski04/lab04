@@ -45,8 +45,8 @@ public class BookLoanCountryChartController extends AbstractService implements I
             for(XYChart.Series<String, Double> series : seriesList) {
                 bookLoanChart.getData().add(series);
             }
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (IOException | InterruptedException | NullPointerException e) {
+            showErrorDialog("Błąd", "Brak dostępu do danych.");
         }
     }
 
