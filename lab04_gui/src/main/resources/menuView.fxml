@@ -70,7 +70,7 @@
             </Lighting>
          </effect>
       </Button>
-      <Button layoutX="734.0" layoutY="477.0" mnemonicParsing="false" prefHeight="121.0" prefWidth="275.0" style="-fx-background-color: grey;" text="Księgozbiór" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="734.0" layoutY="477.0" mnemonicParsing="false" onAction="#switchToLibraryChartView" prefHeight="121.0" prefWidth="275.0" style="-fx-background-color: grey;" text="Księgozbiór" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Tahoma Bold" size="30.0" />
          </font>

@@ -7,4 +7,6 @@ module lab04.gui {
     exports gusclientapp;
     exports controller;
     opens controller to javafx.fxml;
+    exports guiservice;
+    opens guiservice to javafx.fxml;
 }
