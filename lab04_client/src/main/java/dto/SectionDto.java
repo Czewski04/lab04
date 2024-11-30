@@ -14,14 +14,6 @@ public class SectionDto {
     @JsonProperty("nazwa-pozycja")
     private String namePosition;
 
-    public int getIdSection() {
-        return idSection;
-    }
-
-    public int getIdDimension() {
-        return idDimension;
-    }
-
     public String getNameDimension() {
         return nameDimension;
     }

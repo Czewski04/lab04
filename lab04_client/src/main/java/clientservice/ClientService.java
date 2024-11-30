@@ -1,8 +1,11 @@
-package service;
+package clientservice;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dataaccess.SectionClient;
 import dataaccess.TopicClient;
 import dto.DatabaseRowDto;
+import dto.ResponseDatabaseRowDto;
 import dto.SectionDto;
 import dto.TopicDto;
 import model.DatabaseRow;
@@ -10,7 +13,7 @@ import model.DatabaseRow;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public abstract class DtoToModel {
+public abstract class ClientService {
 
     public static ArrayList<DatabaseRow> convertToModel(ArrayList<DatabaseRowDto> DatabaseRowDtosList) throws IOException, InterruptedException {
 
@@ -55,5 +58,21 @@ public abstract class DtoToModel {
         }
 
         return databaseRowsList;
+    }
+
+    public static ArrayList<DatabaseRowDto> dataDeserialization(String response) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        ResponseDatabaseRowDto responseDatabaseRowDto = mapper.readValue(response, ResponseDatabaseRowDto.class);
+        return responseDatabaseRowDto.getData();
+    }
+
+    public static ArrayList<SectionDto> sectionDeserialization(String response) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(response, new TypeReference<>() {});
+    }
+
+    public static ArrayList<TopicDto> topicDeserialization(String response) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(response, new TypeReference<>() {});
     }
 }

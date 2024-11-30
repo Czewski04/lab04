@@ -3,12 +3,12 @@ package app;
 import dataaccess.MainDataClient;
 import dto.DatabaseRowDto;
 import model.DatabaseRow;
-import service.DtoToModel;
+import clientservice.ClientService;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ApiClientApp extends DtoToModel {
+public class ApiClientApp extends ClientService {
 
     public ArrayList<DatabaseRow> getDatabaseRowsListLibraryData(int year) throws IOException, InterruptedException {
         MainDataClient client = new MainDataClient();

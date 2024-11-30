@@ -12,14 +12,14 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.DatabaseRow;
-import guiservice.AbstractService;
+import guiservice.GuiService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class LibraryCountryChartController extends AbstractService implements Initializable, ControllerInterface {
+public class LibraryCountryChartController extends GuiService implements Initializable, ControllerInterface {
 
     private Stage stage;
     private Scene scene;

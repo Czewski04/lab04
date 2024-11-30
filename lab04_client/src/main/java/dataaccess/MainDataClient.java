@@ -1,8 +1,6 @@
 package dataaccess;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import dto.DatabaseRowDto;
-import dto.ResponseDatabaseRowDto;
 
 import java.io.IOException;
 import java.net.URI;
@@ -10,6 +8,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+
+import static clientservice.ClientService.dataDeserialization;
 
 public class MainDataClient {
 
@@ -46,12 +46,6 @@ public class MainDataClient {
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        return deserialization(response.body());
-    }
-
-    private ArrayList<DatabaseRowDto> deserialization(String response) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        ResponseDatabaseRowDto responseDatabaseRowDto = mapper.readValue(response, ResponseDatabaseRowDto.class);
-        return responseDatabaseRowDto.getData();
+        return dataDeserialization(response.body());
     }
 }

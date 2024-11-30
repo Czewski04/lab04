@@ -16,10 +16,6 @@ public class TopicDto {
         return id;
     }
 
-    public String getNameTopic() {
-        return nameTopic;
-    }
-
     public int getIdVar() {
         return idVar;
     }

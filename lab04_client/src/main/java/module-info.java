@@ -8,5 +8,5 @@ module lab04.client {
     exports app;
     exports dataaccess;
     exports model;
-    exports service;
+    exports clientservice;
 }

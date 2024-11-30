@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public abstract class AbstractService {
+public abstract class GuiService {
     public static ArrayList<XYChart.Series<String, Double>> prepareCountryChartSeries(ArrayList<DatabaseRow> databaseRows) throws IOException, InterruptedException {
         ArrayList<XYChart.Series<String, Double>> seriesList = new ArrayList<>();
         HashMap<String, String[]> seriesNamesMap = new HashMap<>(createSeriesMap(databaseRows));

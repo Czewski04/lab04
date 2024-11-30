@@ -1,7 +1,5 @@
 package dataaccess;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import dto.TopicDto;
 
 import java.io.IOException;
@@ -10,6 +8,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+
+import static clientservice.ClientService.topicDeserialization;
 
 public class TopicClient {
     private final HttpClient client;
@@ -30,11 +30,6 @@ public class TopicClient {
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        return deserialization(response.body());
-    }
-
-    private ArrayList<TopicDto> deserialization(String response) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(response, new TypeReference<>() {});
+        return topicDeserialization(response.body());
     }
 }

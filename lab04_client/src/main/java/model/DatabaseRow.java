@@ -27,30 +27,6 @@ public class DatabaseRow {
         this.value = value;
     }
 
-    public int getRowNumber() {
-        return rowNumber;
-    }
-
-    public String getNameVar() {
-        return nameVar;
-    }
-
-    public String getNameSection() {
-        return nameSection;
-    }
-
-    public String getNameDimension1() {
-        return nameDimension1;
-    }
-
-    public String getNameDimension2() {
-        return nameDimension2;
-    }
-
-    public String getNameDimension3() {
-        return nameDimension3;
-    }
-
     public String getNamePosition1() {
         return namePosition1;
     }
