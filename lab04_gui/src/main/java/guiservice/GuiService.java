@@ -3,15 +3,13 @@ package guiservice;
 import javafx.scene.chart.XYChart;
 import model.DatabaseRow;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class GuiService {
-    public static ArrayList<XYChart.Series<String, Double>> prepareCountryChartSeries(ArrayList<DatabaseRow> databaseRows) throws IOException, InterruptedException {
+    public static ArrayList<XYChart.Series<String, Double>> prepareCountryChartSeries(ArrayList<DatabaseRow> databaseRows) {
         ArrayList<XYChart.Series<String, Double>> seriesList = new ArrayList<>();
         HashMap<String, String[]> seriesNamesMap = new HashMap<>(createSeriesMap(databaseRows));
-
 
         for(String seriesName : seriesNamesMap.keySet()) {
             seriesList.add(new XYChart.Series<>());
@@ -26,7 +24,7 @@ public abstract class GuiService {
         return seriesList;
     }
 
-    public static ArrayList<XYChart.Series<String, Double>> prepareRegionsChartSeries(ArrayList<DatabaseRow> databaseRows) throws IOException, InterruptedException {
+    public static ArrayList<XYChart.Series<String, Double>> prepareRegionsChartSeries(ArrayList<DatabaseRow> databaseRows) {
         ArrayList<XYChart.Series<String, Double>> seriesList = new ArrayList<>();
         HashMap<String, String[]> seriesNamesMap = new HashMap<>(createSeriesMap(databaseRows));
 
@@ -46,7 +44,7 @@ public abstract class GuiService {
     private static HashMap<String, String[]> createSeriesMap(ArrayList<DatabaseRow> databaseRows) {
         HashMap<String, String[]> seriesNamesMap = new HashMap<>();
         for (DatabaseRow databaseRow : databaseRows) {
-            String seriesName="";
+            String seriesName;
             if(databaseRow.getNamePosition3().isEmpty())
                 seriesName = databaseRow.getNamePosition2();
             else

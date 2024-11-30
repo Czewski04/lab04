@@ -1,7 +1,7 @@
 package controller.regionsview;
 
 import app.ApiClientApp;
-import controller.ControllerInterface;
+import controller.interfacecontroller.ControllerInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,14 +12,15 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.DatabaseRow;
-import guiservice.GuiService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ReadersRegionsChartController extends GuiService implements Initializable, ControllerInterface {
+import static guiservice.GuiService.prepareRegionsChartSeries;
+
+public class ReadersRegionsChartController implements Initializable, ControllerInterface {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -48,7 +49,6 @@ public class ReadersRegionsChartController extends GuiService implements Initial
             showErrorDialog("Błąd", "Brak dostępu do danych.");
         }
     }
-
 
     public void addYear(){
         this.year+=1;

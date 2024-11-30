@@ -5,8 +5,6 @@ module lab04.gui {
 
     opens gusclientapp to javafx.fxml;
     exports gusclientapp;
-    exports controller;
-    opens controller to javafx.fxml;
     exports guiservice;
     opens guiservice to javafx.fxml;
     exports controller.regionsview;
@@ -15,4 +13,6 @@ module lab04.gui {
     opens controller.countryview to javafx.fxml;
     exports controller.startview;
     opens controller.startview to javafx.fxml;
+    exports controller.interfacecontroller;
+    opens controller.interfacecontroller to javafx.fxml;
 }

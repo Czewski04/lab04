@@ -1,4 +1,4 @@
-package controller;
+package controller.interfacecontroller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +38,4 @@ public interface ControllerInterface {
         alert.setHeaderText(header);
         alert.showAndWait();
     }
-
-
 }
